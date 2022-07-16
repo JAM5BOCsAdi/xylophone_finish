@@ -34,15 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
   /* ---------------- VARIABLES ---------------- */
 /*  int _counter = 0; */
   /* ---------------- FUNCTIONS ---------------- */
-/*  void _incrementCounter() {
-    setState(
-      () {
-        _counter++;
-      },
+  Future<void> _playSound(int noteNumber) async {
+    final player = AudioPlayer();
+    await player.play(
+      AssetSource("assets_note$noteNumber.wav"),
     );
   }
-
-*/
 
   /* ---------------- LAYOUT ---------------- */
   @override
@@ -63,11 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFF2A6387),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(1);
               },
               child: const Text('Note1'),
             ),
@@ -78,11 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFF50AF9D),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(2);
               },
               child: const Text('Note2'),
             ),
@@ -93,11 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFFFFCD00),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(3);
               },
               child: const Text('Note3'),
             ),
@@ -108,11 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFFC8E9DE),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(4);
               },
               child: const Text('Note4'),
             ),
@@ -123,11 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFF6ABCCF),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(5);
               },
               child: const Text('Note5'),
             ),
@@ -138,11 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFF9A8447),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(6);
               },
               child: const Text('Note6'),
             ),
@@ -153,11 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Color(0xFFF20C35),
                 ),
               ),
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.play(
-                  AssetSource("assets_note1.wav"),
-                ); // will immediately start playing
+              onPressed: () {
+                _playSound(7);
               },
               child: const Text('Note7'),
             ),
