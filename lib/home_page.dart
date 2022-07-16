@@ -40,6 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
       AssetSource("assets_note$noteNumber.wav"),
     );
   }
+  /*
+  *   Így néz ki simán, ha nincs használva a(z) "Async - Await" páros:
+  *
+  *       void _playSound(int noteNumber){
+  *         ...
+  *       }
+  *
+  */
 
   /* ---------------- LAYOUT ---------------- */
   @override
@@ -52,90 +60,140 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFF2A6387),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFF2A6387),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(1);
+                },
+                child: const Text('Note1'),
               ),
-              onPressed: () {
-                _playSound(1);
-              },
-              child: const Text('Note1'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFF50AF9D),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFF50AF9D),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(2);
+                },
+                child: const Text('Note2'),
               ),
-              onPressed: () {
-                _playSound(2);
-              },
-              child: const Text('Note2'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFFFFCD00),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFFFFCD00),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(3);
+                },
+                child: const Text('Note3'),
               ),
-              onPressed: () {
-                _playSound(3);
-              },
-              child: const Text('Note3'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFFC8E9DE),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFFC8E9DE),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(4);
+                },
+                child: const Text('Note4'),
               ),
-              onPressed: () {
-                _playSound(4);
-              },
-              child: const Text('Note4'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFF6ABCCF),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFF6ABCCF),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(5);
+                },
+                child: const Text('Note5'),
               ),
-              onPressed: () {
-                _playSound(5);
-              },
-              child: const Text('Note5'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFF9A8447),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFF9A8447),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(6);
+                },
+                child: const Text('Note6'),
               ),
-              onPressed: () {
-                _playSound(6);
-              },
-              child: const Text('Note6'),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                shadowColor: MaterialStateProperty.all(Colors.transparent),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color(0xFFF20C35),
+            Expanded(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shadowColor: MaterialStateProperty.all(Colors.transparent),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFFF20C35),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0.0),
+                    ),
+                  ),
                 ),
+                onPressed: () {
+                  _playSound(7);
+                },
+                child: const Text('Note7'),
               ),
-              onPressed: () {
-                _playSound(7);
-              },
-              child: const Text('Note7'),
             ),
           ],
         ),
