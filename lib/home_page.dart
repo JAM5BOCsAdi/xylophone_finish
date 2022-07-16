@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 /* ------------------------------ STATELESS WIDGET ------------------------------ */
@@ -31,15 +32,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /* ---------------- VARIABLES ---------------- */
-  int _counter = 0;
+/*  int _counter = 0; */
   /* ---------------- FUNCTIONS ---------------- */
-  void _incrementCounter() {
+/*  void _incrementCounter() {
     setState(
       () {
         _counter++;
       },
     );
   }
+*/
 
   /* ---------------- LAYOUT ---------------- */
   @override
@@ -52,24 +54,21 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
+          child: ElevatedButton(
+            style: ButtonStyle(
+              minimumSize: MaterialStateProperty.all(
+                const Size(200.0, 200.0),
               ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ],
+            ),
+            onPressed: () async {
+              final player = AudioPlayer();
+              await player.play(
+                AssetSource("assets_note1.wav"),
+              ); // will immediately start playing
+            },
+            child: const Text('Click Me'),
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
