@@ -1,4 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /* ------------------------------ STATELESS WIDGET ------------------------------ */
@@ -33,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   /* ---------------- VARIABLES ---------------- */
 /*  int _counter = 0; */
+
   /* ---------------- FUNCTIONS ---------------- */
   Future<void> _playSound(int noteNumber) async {
     final player = AudioPlayer();
@@ -49,9 +51,71 @@ class _MyHomePageState extends State<MyHomePage> {
   *
   */
 
+  /* Custom function, where you can add the name to it as you want */
+  Future<void> _greet(
+      {required String personToGreet, required String greeting}) async {
+    if (kDebugMode) {
+      print("$greeting $personToGreet");
+    }
+  }
+
+  int _add({required int n1, required int n2}) {
+    int result = n1 + n2;
+    if (kDebugMode) {
+      print(result);
+    }
+    return result;
+  }
+
+  int _multiply({required int step1Result, required int multiplier}) {
+    int result = step1Result * multiplier;
+    if (kDebugMode) {
+      print(result);
+    }
+    return result;
+  }
+
+  double _finalResult({required int step2Result, required int divider}) {
+    double result = step2Result / divider;
+    if (kDebugMode) {
+      print(result);
+    }
+    return result;
+  }
+
+  /* Same as the RETURN type */
+  Expanded _buildKey({required int noteColor, required int noteNumber}) {
+    return Expanded(
+      child: ElevatedButton(
+        style: ButtonStyle(
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
+          backgroundColor: MaterialStateProperty.all(
+            Color(noteColor),
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0.0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          _playSound(noteNumber);
+        },
+        child: Text('Note$noteNumber'),
+      ),
+    );
+  }
+
   /* ---------------- LAYOUT ---------------- */
   @override
   Widget build(BuildContext context) {
+    /* Custom function calling, where you can add the name to it as you want */
+    _greet(personToGreet: "Jackie", greeting: "How do you do");
+    int step1Result = _add(n1: 5, n2: 9);
+    int step2Result = _multiply(step1Result: step1Result, multiplier: 5);
+    /* double finalResult = */
+    _finalResult(step2Result: step2Result, divider: 3);
+
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -62,139 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFF2A6387),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(1);
-                },
-                child: const Text('Note1'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFF50AF9D),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(2);
-                },
-                child: const Text('Note2'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFFFFCD00),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(3);
-                },
-                child: const Text('Note3'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFFC8E9DE),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(4);
-                },
-                child: const Text('Note4'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFF6ABCCF),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(5);
-                },
-                child: const Text('Note5'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFF9A8447),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(6);
-                },
-                child: const Text('Note6'),
-              ),
-            ),
-            Expanded(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFFF20C35),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  _playSound(7);
-                },
-                child: const Text('Note7'),
-              ),
-            ),
+            _buildKey(noteColor: 0xFF2A6387, noteNumber: 1),
+            _buildKey(noteColor: 0xFF50AF9D, noteNumber: 2),
+            _buildKey(noteColor: 0xFFFFCD00, noteNumber: 3),
+            _buildKey(noteColor: 0xFFC8E9DE, noteNumber: 4),
+            _buildKey(noteColor: 0xFF6ABCCF, noteNumber: 5),
+            _buildKey(noteColor: 0xFF9A8447, noteNumber: 6),
+            _buildKey(noteColor: 0xFFF20C35, noteNumber: 7),
           ],
         ),
       ),
